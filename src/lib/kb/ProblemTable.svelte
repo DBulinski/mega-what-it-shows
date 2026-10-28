@@ -7,8 +7,10 @@
 
   let { ticket, issues = {} }: { ticket: number; issues?: Partial<Record<Problem, string>> } = $props();
 
-  const groups = $derived(problemsIn(reports as Report[], ticket, tenantOf, notes.oneDayMove));
-  const total = $derived(groups.reduce((n, g) => n + g.reports.length, 0));
+  const view = $derived(problemsIn(reports as Report[], ticket, tenantOf, notes.oneDayMove));
+  const groups = $derived(view.groups);
+  const total = $derived(view.total);
+  const shift = $derived(groups.find((g) => g.problem === 'shift'));
 
   const WHAT: Record<Problem, string> = {
     parser: 'The shared parser reads the date month first; day-first tenants get day and month swapped.',
@@ -42,6 +44,11 @@
   </tbody>
 </table>
 
+{#if shift}
+  <p class="note">The {shift.reports.length} <code>shift</code> reports are also counted under <code>parser</code>, where the desk files them by tenant.</p>
+{/if}
+
 <style>
   .sum { font-size: 1.1rem; }
+  .note { color: var(--muted); font-size: 0.85em; }
 </style>

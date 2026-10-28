@@ -41,7 +41,8 @@ coming in after it ships.
 - **`shift`**: no swap. The date lands one day early (Tuesday 12 May shows as Monday 11 May), or
   depends on where the reader is (Lisbon gets Tuesday, Toronto gets Monday). A date with no time
   is stored as midnight UTC and shown in the viewer's time zone. The desk already lists these
-  reports in `desk-notes.json`; this page counts them as their own problem.
+  reports in `desk-notes.json`. They have their own ticket; the table still counts them under
+  `parser`, where the desk files them by tenant.
 
 Intake's `parser` / `hint` tag is a guess from the reporter's browser. It disagrees with the
 tenant on many reports, so the table above places reports by tenant and form, never by tag.
