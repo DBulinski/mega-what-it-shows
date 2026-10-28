@@ -4,7 +4,7 @@ title: '#4471 · three problems in one ticket'
 owner: DBulinski
 status: proposed
 reviewed: 2026-10-28
-signature: DBulinski
+signature: 'v1.eyJzdWIiOiI5MTkiLCJhdWQiOiJjaGFsbGVuZ2U6d2hhdC1pdC1zaG93cyIsImlhdCI6MTc5MzE3MjAwNiwiZXhwIjoxNzkzMjU4NDA2fQ.23qxlKuzmN0GGXityvD1Yhlv0JNQbYtRPYZpn4y-4qc'
 ---
 
 <script>
