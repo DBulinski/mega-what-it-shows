@@ -23,13 +23,22 @@ signature: 'v1.eyJzdWIiOiI5MTkiLCJhdWQiOiJjaGFsbGVuZ2U6d2hhdC1pdC1zaG93cyIsImlhd
 holds three problems. Each needs its own fix, so each has its own ticket.
 
 <Callout kind="warn">
-The queued parser fix will not close #4471. The booking-v3 form and the one-day move keep
-coming in after it ships.
+The parser fix closed #4471, but not everything in it. The one-day move is a separate bug and is
+still open.
 </Callout>
 
 ## What is in #4471
 
 <ProblemTable ticket={4471} {issues} />
+
+## Where they stand
+
+- **`parser`**: fixed by engineering (`fix(dates): parse dd/mm for eu locales`). #4471 closed on
+  5 October 2026.
+- **`hint`**: won't fix. The booking-v3 form is retired, so its `MM/DD/YYYY` hint no longer reaches
+  anyone.
+- **`shift`**: open. The parser fix does not touch it; dates with no time still land a day early
+  west of UTC.
 
 ## How to tell them apart
 

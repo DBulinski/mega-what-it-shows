@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="../../../../_app/immutable/entry/start.5GKhZgxj.js" rel="modulepreload">
-		<link href="../../../../_app/immutable/chunks/CR96OE5-.js" rel="modulepreload">
+    <link href="../../../../_app/immutable/entry/start.B66mIZl_.js" rel="modulepreload">
+		<link href="../../../../_app/immutable/chunks/DFJR9cau.js" rel="modulepreload">
 		<link href="../../../../_app/immutable/chunks/DgZ7eMIM.js" rel="modulepreload">
-		<link href="../../../../_app/immutable/entry/app.ceP4KCbq.js" rel="modulepreload">
+		<link href="../../../../_app/immutable/entry/app.BkKSEFsZ.js" rel="modulepreload">
 		<link href="../../../../_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
 		<link href="../../../../_app/immutable/nodes/0.B14MnPIm.js" rel="modulepreload">
-		<link href="../../../../_app/immutable/nodes/5.waMF7TZl.js" rel="modulepreload">
-		<link href="../../../../_app/immutable/chunks/DHxPQL1p.js" rel="modulepreload">
+		<link href="../../../../_app/immutable/nodes/5.BZw5xgu3.js" rel="modulepreload">
+		<link href="../../../../_app/immutable/chunks/CTtcr3j4.js" rel="modulepreload">
 		<link href="../../../../_app/immutable/chunks/BUobAEgd.js" rel="modulepreload">
 		<link href="../../../../_app/immutable/chunks/CVBzP17p.js" rel="modulepreload">
 		<link href="../../../../_app/immutable/chunks/BlNrTger.js" rel="modulepreload">
@@ -21,8 +21,11 @@
   </head>
   <body>
     <div style="display: contents"><!--[--><!--[0--><!--[--><!--[--><div class="kb svelte-e2jw2j"><header><a class="crumb svelte-e2jw2j" href="/kb">support desk · kb</a> <h1 class="svelte-e2jw2j">#4471 · three problems in one ticket</h1> <p class="meta svelte-e2jw2j"><span>owner <b>DBulinski</b></span> <span class="status proposed svelte-e2jw2j">proposed</span> <span class="svelte-e2jw2j">reviewed 2026-10-28 · 0 days ago</span></p></header> <!--[-1--><!--]--> <main><p><a href="/kb/incidents/4471">#4471</a> is marked known: one bug, one fix queued. Read the reports and it
-holds three problems. Each needs its own fix, so each has its own ticket.</p> <aside class="warn svelte-17bri61"><!---->The queued parser fix will not close #4471. The booking-v3 form and the one-day move keep
-coming in after it ships.<!----></aside><!----> <h2>What is in #4471</h2> <p class="sum svelte-1op6c6"><strong>412</strong> reports merged into #4471 · <strong>3</strong> problems</p> <table><thead><tr><th>problem</th><th>reports</th><th>tenants</th><th>seen</th><th>what happens</th><th>ticket</th></tr></thead><tbody><!--[--><tr><td><code>parser</code></td><td>379</td><td>11</td><td>2026-04-01 → 2026-10-04</td><td>The shared parser reads the date month first; day-first tenants get day and month swapped.</td><td><!--[0--><a href="https://github.com/DBulinski/mega-what-it-shows/issues/1">#1</a><!--]--></td></tr><tr><td><code>hint</code></td><td>33</td><td>3</td><td>2026-04-17 → 2026-09-22</td><td>booking-v3 prints MM/DD/YYYY under the date field; people type month first, the form reads it day first.</td><td><!--[0--><a href="https://github.com/DBulinski/mega-what-it-shows/issues/2">#2</a><!--]--></td></tr><tr><td><code>shift</code></td><td>5</td><td>5</td><td>2026-04-02 → 2026-10-04</td><td>The date lands one day early: a date-only value is shown in the viewer’s time zone.</td><td><!--[0--><a href="https://github.com/DBulinski/mega-what-it-shows/issues/3">#3</a><!--]--></td></tr><!--]--></tbody></table> <!--[0--><p class="note svelte-1op6c6">The 5 <code>shift</code> reports are also counted under <code>parser</code>, where the desk files them by tenant.</p><!--]--><!----> <h2>How to tell them apart</h2> <ul><li><strong><code>parser</code></strong>: day and month swap (7 April becomes 4 July). The tenant writes the day first,
+holds three problems. Each needs its own fix, so each has its own ticket.</p> <aside class="warn svelte-17bri61"><!---->The parser fix closed #4471, but not everything in it. The one-day move is a separate bug and is
+still open.<!----></aside><!----> <h2>What is in #4471</h2> <p class="sum svelte-1op6c6"><strong>412</strong> reports merged into #4471 · <strong>3</strong> problems</p> <table><thead><tr><th>problem</th><th>reports</th><th>tenants</th><th>seen</th><th>what happens</th><th>ticket</th></tr></thead><tbody><!--[--><tr><td><code>parser</code></td><td>379</td><td>11</td><td>2026-04-01 → 2026-10-04</td><td>The shared parser reads the date month first; day-first tenants get day and month swapped.</td><td><!--[0--><a href="https://github.com/DBulinski/mega-what-it-shows/issues/1">#1</a><!--]--></td></tr><tr><td><code>hint</code></td><td>33</td><td>3</td><td>2026-04-17 → 2026-09-22</td><td>booking-v3 prints MM/DD/YYYY under the date field; people type month first, the form reads it day first.</td><td><!--[0--><a href="https://github.com/DBulinski/mega-what-it-shows/issues/2">#2</a><!--]--></td></tr><tr><td><code>shift</code></td><td>5</td><td>5</td><td>2026-04-02 → 2026-10-04</td><td>The date lands one day early: a date-only value is shown in the viewer’s time zone.</td><td><!--[0--><a href="https://github.com/DBulinski/mega-what-it-shows/issues/3">#3</a><!--]--></td></tr><!--]--></tbody></table> <!--[0--><p class="note svelte-1op6c6">The 5 <code>shift</code> reports are also counted under <code>parser</code>, where the desk files them by tenant.</p><!--]--><!----> <h2>Where they stand</h2> <ul><li><strong><code>parser</code></strong>: fixed by engineering (<code>fix(dates): parse dd/mm for eu locales</code>). #4471 closed on
+5 October 2026.</li> <li><strong><code>hint</code></strong>: won’t fix. The booking-v3 form is retired, so its <code>MM/DD/YYYY</code> hint no longer reaches
+anyone.</li> <li><strong><code>shift</code></strong>: open. The parser fix does not touch it; dates with no time still land a day early
+west of UTC.</li></ul> <h2>How to tell them apart</h2> <ul><li><strong><code>parser</code></strong>: day and month swap (7 April becomes 4 July). The tenant writes the day first,
 and the report did not come through booking-v3’s form.</li> <li><strong><code>hint</code></strong>: the same swap, but through booking-v3’s form. The form prints <code>MM/DD/YYYY</code> under the
 date field; people type what it says and the form reads it day first. Fixing the parser does
 not touch this: the hint is wrong.</li> <li><strong><code>shift</code></strong>: no swap. The date lands one day early (Tuesday 12 May shows as Monday 11 May), or
@@ -35,15 +38,15 @@ subject matching put them in one ticket. Merging by cause, as the <a href="/kb/t
 			
 			<script>
 				{
-					__sveltekit_1989db3 = {
+					__sveltekit_1bt3b8d = {
 						base: new URL("../../../..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../../../../_app/immutable/entry/start.5GKhZgxj.js"),
-						import("../../../../_app/immutable/entry/app.ceP4KCbq.js")
+						import("../../../../_app/immutable/entry/start.B66mIZl_.js"),
+						import("../../../../_app/immutable/entry/app.BkKSEFsZ.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 5],
