@@ -1,0 +1,56 @@
+---
+layout: runbook
+title: '#4471 · three problems in one ticket'
+owner: DBulinski
+status: proposed
+reviewed: 2026-10-28
+signature: DBulinski
+---
+
+<script>
+  import ProblemTable from '#lib/kb/ProblemTable.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+
+  const issues = {
+    parser: 'https://github.com/DBulinski/mega-what-it-shows/issues/1',
+    hint: 'https://github.com/DBulinski/mega-what-it-shows/issues/2',
+    shift: 'https://github.com/DBulinski/mega-what-it-shows/issues/3',
+  };
+</script>
+
+[#4471](/kb/incidents/4471) is marked known: one bug, one fix queued. Read the reports and it
+holds three problems. Each needs its own fix, so each has its own ticket.
+
+<Callout kind="warn">
+The queued parser fix will not close #4471. The booking-v3 form and the one-day move keep
+coming in after it ships.
+</Callout>
+
+## What is in #4471
+
+<ProblemTable ticket={4471} {issues} />
+
+## How to tell them apart
+
+- **`parser`**: day and month swap (7 April becomes 4 July). The tenant writes the day first,
+  and the report did not come through booking-v3's form.
+- **`hint`**: the same swap, but through booking-v3's form. The form prints `MM/DD/YYYY` under the
+  date field; people type what it says and the form reads it day first. Fixing the parser does
+  not touch this: the hint is wrong.
+- **`shift`**: no swap. The date lands one day early (Tuesday 12 May shows as Monday 11 May), or
+  depends on where the reader is (Lisbon gets Tuesday, Toronto gets Monday). A date with no time
+  is stored as midnight UTC and shown in the viewer's time zone. The desk already lists these
+  reports in `desk-notes.json`; this page counts them as their own problem.
+
+Intake's `parser` / `hint` tag is a guess from the reporter's browser. It disagrees with the
+tenant on many reports, so the table above places reports by tenant and form, never by tag.
+
+## Why they were merged
+
+[Decision 0001](/kb/decisions/0001-dedupe-by-subject) merges reports with the same subject line.
+All three problems produce the same subjects ("Wrong day on the invite", "Date is wrong"), so
+subject matching put them in one ticket. Merging by cause, as the [triage explorer](/kb/triage/dedupe)
+already does, keeps them apart.
+
+<RenderStamp {signature} />
